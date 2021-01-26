@@ -40,6 +40,8 @@ const employees = [
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
 
+//function calculated bonus. takes an employee and calculates bonus and returns new employee object
+//employeeBonus rating calculator
 function employeeBonus(employee) {
   const newObj = {};
   if (employee.reviewRating <= 2) {
@@ -52,11 +54,30 @@ function employeeBonus(employee) {
     newObj.bonusPercentage = 0.1;
   }
 
-  // for (let i = 0; i < employees.length; i++)
-
   return newObj; //new obj, include name, bonus %, total compensation, total bonus
 }
+//employee number is 4 digits receive additional 5%
+if (employees.employeeNumber.length <= 4) {
+  bonusPercentage += 0.05;
+}
+//if annual income is greater than $65k then bonus adjusted down by 1%
+if (employees.employeeSalary >= 65000) {
+  bonusPercentage -= 0.01;
+}
+//no bonus above 13%
+if (employees.bonusPercentage > 0.13) {
+  bonusPercentage = 0.13;
+}
+if (employees.bonusPercentage < 0) {
+  bonusPercentage = 0;
+}
+//calculate total bonus and total compensation
+newObject.totalBonus = bonusPercentage * employeeSalary;
 
-console.log(employeeBonus['Jem']);
+for (let i = 0; i < employees.length; i++) {
+  console.log(employeeBonus(employee[i]));
+}
+
+console.log(employeeBonus(employees[0]));
 
 console.log(employees);
