@@ -3,35 +3,33 @@ const employees = [
     name: 'Atticus',
     employeeNumber: '2405',
     annualSalary: '47000',
-    reviewRating: 3
+    reviewRating: 3,
   },
   {
     name: 'Jem',
     employeeNumber: '62347',
     annualSalary: '63500',
-    reviewRating: 4
+    reviewRating: 4,
   },
   {
     name: 'Scout',
     employeeNumber: '6243',
     annualSalary: '74750',
-    reviewRating: 5
+    reviewRating: 5,
   },
   {
     name: 'Robert',
     employeeNumber: '26835',
     annualSalary: '66000',
-    reviewRating: 1
+    reviewRating: 1,
   },
   {
     name: 'Mayella',
     employeeNumber: '89068',
     annualSalary: '35000',
-    reviewRating: 1
-  }
+    reviewRating: 1,
+  },
 ];
-
-
 
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
 
@@ -42,24 +40,23 @@ const employees = [
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
 
-function employeeBonus (employee){
+function employeeBonus(employee) {
   const newObj = {};
-  if ( employee.reviewRating =< 2 ) {
+  if (employee.reviewRating <= 2) {
     newObj.bonusPercentage = 0;
-  } else if ( employee.reviewRating == 3) {
+  } else if (employee.reviewRating == 3) {
     newObj.bonusPercentage = 0.04;
-  } else if ( employee.reviewRating == 4) {
+  } else if (employee.reviewRating == 4) {
     newObj.bonusPercentage = 0.06;
-  } else () {
-    newObj.bonusPercentage = 0.10;
+  } else {
+    newObj.bonusPercentage = 0.1;
   }
 
   // for (let i = 0; i < employees.length; i++)
 
-
-  return newObj;//new obj, include name, bonus %, total compensation, total bonus
+  return newObj; //new obj, include name, bonus %, total compensation, total bonus
 }
 
+console.log(employeeBonus['Jem']);
 
-
-console.log( employees );
+console.log(employees);
