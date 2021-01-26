@@ -31,6 +31,8 @@ const employees = [
   }
 ];
 
+
+
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
 
 // Take small steps! Don't write a for loop and two functions that do all of the calculations right away.
@@ -39,5 +41,25 @@ const employees = [
 
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
+
+function employeeBonus (employee){
+  const newObj = {};
+  if ( employee.reviewRating =< 2 ) {
+    newObj.bonusPercentage = 0;
+  } else if ( employee.reviewRating == 3) {
+    newObj.bonusPercentage = 0.04;
+  } else if ( employee.reviewRating == 4) {
+    newObj.bonusPercentage = 0.06;
+  } else () {
+    newObj.bonusPercentage = 0.10;
+  }
+
+  // for (let i = 0; i < employees.length; i++)
+
+
+  return newObj;//new obj, include name, bonus %, total compensation, total bonus
+}
+
+
 
 console.log( employees );
