@@ -65,6 +65,32 @@ function ProcessEmployeeBonus(employee) {
     bonusPct = 0;
   }
 
+  //adjust based on employee number
+  //4 digit number has seniority add 5%
+  if (employee.employeeNumber.length === 4) {
+    bonusPct += 5;
+  }
+
+  // annual salary greater than 65k subtract 1%
+  // Number will do number conversion regardless of float
+  // parsetInt will force to whole number (doesn't round) 1.99 -> 1
+  // parseFloat will maintain decimal
+  if (Number(employee.annualSalary) > 65000) {
+    //subtract 1%
+    bonusPct -= 1;
+  }
+
+  // restricting bonus range from 13 to 0
+  if (bonusPct > 13) {
+    bonusPct = 13;
+  } else if (bonusPct < 0) {
+    bonusPct = 0;
+  }
+
+  // totalCompensation = annualSalary + totalBonus
+
+  // totalBonus = bonusPct / 100 * annual Salary
+
   //TODO - return results
   return {
     name: employee.name,
@@ -72,6 +98,14 @@ function ProcessEmployeeBonus(employee) {
     totalCompensation: 0,
     totalBonus: 0,
   };
+}
+
+function calcTotalCompensation(annualSalary, bonusAmount) {
+  return annualSalary + bonusAmount;
+}
+
+function calcTotalBonus(bonusPctWhole, annualSalary) {
+  return (bonusPctWhole / 100) * bonusAmount;
 }
 
 console.log(employees);
