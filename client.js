@@ -53,11 +53,22 @@ for (let i = 0; i < employees.length; i++) {
 
 function ProcessEmployeeBonus(employee) {
   //something happens here
+  let bonusPct = 0;
+
+  if (employee.reviewRating === 3) {
+    bonusPct = 4;
+  } else if (employee.reviewRating === 4) {
+    bonusPct = 6;
+  } else if (employee.reviewRating === 5) {
+    bonusPct = 10;
+  } else if (employee.reviewRating <= 2) {
+    bonusPct = 0;
+  }
 
   //TODO - return results
   return {
     name: employee.name,
-    bonusPercentage: 0,
+    bonusPercentage: bonusPct,
     totalCompensation: 0,
     totalBonus: 0,
   };
