@@ -56,7 +56,7 @@ function ProcessEmployeeBonus(employee) {
 
   //TODO - return results
   return {
-    name: '',
+    name: employee.name,
     bonusPercentage: 0,
     totalCompensation: 0,
     totalBonus: 0,
